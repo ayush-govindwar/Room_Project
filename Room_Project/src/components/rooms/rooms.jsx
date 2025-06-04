@@ -93,7 +93,7 @@ const Rooms = ({ onRoomSelect }) => {
     }
   ];
 
-  // State to track current image for each room's carousel
+  
   const [currentImageIndex, setCurrentImageIndex] = useState(
     roomsData.reduce((acc, room) => ({ ...acc, [room.id]: 0 }), {})
   );
@@ -120,10 +120,10 @@ const Rooms = ({ onRoomSelect }) => {
   };
 
   const handleRoomSelect = (room) => {
-    // Call the parent function to handle room selection
+    // the parent function to handle room selection
     onRoomSelect(room);
     
-    // Scroll to contact form
+    // scroll to contact form
     const contactElement = document.querySelector('.contact');
     if (contactElement) {
       contactElement.scrollIntoView({ 
@@ -134,7 +134,7 @@ const Rooms = ({ onRoomSelect }) => {
   };
 
   return (
-    <div className='rooms'>
+    <div className='rooms' >
       {roomsData.map((room, index) => (
         <div key={room.id} className={`room ${index % 2 === 0 ? 'room-left' : 'room-right'}`}>
           {/* Image Carousel */}

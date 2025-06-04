@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import './Hero.css'
-
+import './hero.css'
+import { Link } from 'react-scroll'
 const Hero = () => {
   const [textOpacity, setTextOpacity] = useState(1);
 
@@ -34,7 +34,7 @@ const Hero = () => {
         }}>
             <h1>We ensure a smooth room experience</h1>
             <p>Book your room with us and enjoy a hassle-free stay. Our team is dedicated to providing you with the best service possible.</p>
-            <button className='btn'>Book Now</button>
+            <Link to='rooms' smooth={true} offset={-210} duration={500} className='btn'>Book Now</Link>
         </div>
     </div>
   )

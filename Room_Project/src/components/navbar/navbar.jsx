@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo2.png';
+import {Link} from 'react-scroll'
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -21,19 +23,50 @@ const Navbar = () => {
     };
   }, []); 
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <nav className={`container ${sticky ? 'dark-nav' : ''}`}>
       <img 
         src={logo} 
         alt="Logo" 
       />
-      <ul>
-        <li>Home</li>
-        <li>Rooms</li>
-        <li>Testimonials</li>
-        <li>About Us</li> 
-        <li><button className={`btn ${sticky ? 'dark-btn' : ''}`}>Contact Us</button></li>
+      
+      {/* Desktop Menu */}
+      <ul className="desktop-menu">
+        <li><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link> </li>
+        <li><Link to='rooms' smooth={true} offset={-210} duration={500}>Rooms</Link></li>
+        <li><Link to='testimonials' smooth={true} offset={-250} duration={500}>Testimonials</Link></li>
+        <li><Link to='contact' smooth={true} offset={-100} duration={500}>About Us</Link></li> 
+        <li><Link to='contact' smooth={true} offset={-100} duration={500} className={`btn ${sticky ? 'dark-btn' : ''}`}>Contact Us</Link></li>
       </ul>
+
+      {/* Mobile Menu Button */}
+      <div className="mobile-menu-btn" onClick={toggleMobileMenu}>
+        <span className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}></span>
+        <span className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}></span>
+        <span className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}></span>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        <ul>
+          <li><Link to='hero' smooth={true} offset={0} duration={500} onClick={closeMobileMenu}>Home</Link></li>
+          <li><Link to='rooms' smooth={true} offset={-210} duration={500} onClick={closeMobileMenu}>Rooms</Link></li>
+          <li><Link to='testimonials' smooth={true} offset={-250} duration={500} onClick={closeMobileMenu}>Testimonials</Link></li>
+          <li><Link to='contact' smooth={true} offset={-90} duration={500} onClick={closeMobileMenu}>About Us</Link></li>
+          <li><Link to='contact' smooth={true} offset={-90} duration={500} className={`btn ${sticky ? 'dark-btn' : ''}`} onClick={closeMobileMenu}>Contact Us</Link></li>
+        </ul>
+      </div>
     </nav>
   )
 }

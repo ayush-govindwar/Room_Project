@@ -25,10 +25,30 @@ nav ul li{
     font-size: clamp(14px, 2.5vw, 16px); /* Responsive font */
 }
 
+/* Hover effects for navigation links */
+nav ul li a {
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 25px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effects for dark navigation */
+.dark-nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
 .dark-nav{
     color: black;
     background-color: #f8f9f4;
-
 }
 
 .dark-btn{
@@ -39,5 +59,141 @@ nav ul li{
 .dark-btn:hover {
     background: white;
     color: #212121;
+}
 
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.hamburger {
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.hamburger.active:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100%;
+    background: linear-gradient(135deg, #f8f9f4 0%, #e8e6d0 100%);
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 80px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu ul li a {
+    display: block;
+    padding: 20px 30px;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.mobile-menu ul li a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateX(10px);
+    box-shadow: none;
+}
+
+.mobile-menu ul li a.btn {
+    margin: 20px 30px;
+    padding: 12px 24px;
+    background: #D2D0A0;
+    color: black;
+    border-radius: 25px;
+    text-align: center;
+    border: 2px solid #c0be90;
+}
+
+.mobile-menu ul li a.btn:hover {
+    background: white;
+    color: #212121;
+    transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: none;
+    }
+    
+    .mobile-menu-overlay {
+        display: none;
+    }
 }
