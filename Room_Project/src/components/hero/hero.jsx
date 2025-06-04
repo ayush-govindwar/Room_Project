@@ -25,12 +25,13 @@ const Hero = () => {
   return (
     <div className='hero container'>
         <div className='hero-text' style={{ 
-          position: 'fixed',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          opacity: textOpacity,
-          transition: 'opacity 0.1s ease'
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        opacity: textOpacity,
+        transition: 'opacity 0.1s ease',
+        pointerEvents: textOpacity < 0.1 ? 'none' : 'auto' // Add this line
         }}>
             <h1>We ensure a smooth room experience</h1>
             <p>Book your room with us and enjoy a hassle-free stay. Our team is dedicated to providing you with the best service possible.</p>
