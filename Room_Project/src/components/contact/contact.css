@@ -68,7 +68,7 @@
     width: 100%;
     background: white;
     padding: 15px;
-    border: 0;
+    border: 1px solid #e0e0e0; /* Added visible border */
     outline: 0;
     margin-bottom: 15px;
     margin-top: 5px;
@@ -77,6 +77,34 @@
     border-radius: 4px;
     font-size: 16px;
     font-family: inherit;
+    transition: all 0.3s ease; /* Added transition for smooth focus effect */
+    cursor: text; /* Added text cursor */
+}
+
+/* Essential focus states for proper input selection */
+.contact form input:focus,
+.contact form textarea:focus,
+.contact form select:focus{
+    border: 2px solid #5a6b47; /* Clear focus border */
+    background: #fefefe;
+    box-shadow: 0 0 0 3px rgba(90, 107, 71, 0.1); /* Focus ring for accessibility */
+    outline: none; /* Remove default outline since we have custom focus */
+}
+
+/* Hover states for better UX */
+.contact form input:hover,
+.contact form textarea:hover,
+.contact form select:hover{
+    border-color: #5a6b47;
+    background: #fefefe;
+}
+
+/* Active state for when clicking */
+.contact form input:active,
+.contact form textarea:active,
+.contact form select:active{
+    border-color: #5a6b47;
+    transform: none; /* Prevent any movement on click */
 }
 
 .contact form select{
@@ -87,6 +115,56 @@
     background-repeat: no-repeat;
     background-size: 16px;
     padding-right: 40px;
+}
+
+/* Ensure textarea is properly selectable */
+.contact form textarea {
+    cursor: text;
+    resize: vertical; /* Allow vertical resize only */
+    min-height: 120px;
+}
+
+/* Label styling to prevent overlap issues */
+.contact form label {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 14px;
+    pointer-events: none; /* Prevent labels from interfering with clicks */
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure inputs have full clickable area */
+.contact form input,
+.contact form textarea,
+.contact form select {
+    position: relative;
+    z-index: 2; /* Ensure inputs are above labels */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+}
+
+/* Fix for mobile touch issues */
+.contact form input,
+.contact form textarea,
+.contact form select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    touch-action: manipulation; /* Improve touch responsiveness */
+}
+
+/* Placeholder styling for better visibility */
+.contact form input::placeholder,
+.contact form textarea::placeholder{
+    color: #999;
+    opacity: 1;
+}
+
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder{
+    color: #ccc;
 }
 
 /* Tablet Styles */
@@ -225,29 +303,4 @@
     .contact form textarea {
         min-height: 100px;
     }
-}
-
-.submit-message {
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: 500;
-}
-
-.submit-message.success {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-}
-
-.submit-message.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-}
-
-.btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
 }
