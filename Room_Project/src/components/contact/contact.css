@@ -85,7 +85,7 @@
 .contact form input:focus,
 .contact form textarea:focus,
 .contact form select:focus{
-    border: 2px solid #5a6b47; /* Clear focus border */
+    border: 1px solid #5a6b47; /* Clear focus border */
     background: #fefefe;
     box-shadow: 0 0 0 3px rgba(90, 107, 71, 0.1); /* Focus ring for accessibility */
     outline: none; /* Remove default outline since we have custom focus */
