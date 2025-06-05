@@ -137,7 +137,7 @@ const Rooms = ({ onRoomSelect }) => {
     <div className='rooms' >
       {roomsData.map((room, index) => (
         <div key={room.id} className={`room ${index % 2 === 0 ? 'room-left' : 'room-right'}`}>
-          {/* Image Carousel */}
+          
           <div className="room-carousel">
             <div className="carousel-container">
               <img 
@@ -146,7 +146,7 @@ const Rooms = ({ onRoomSelect }) => {
                 className="room-image"
               />
               
-              {/* Navigation Arrows */}
+              
               <button 
                 className="carousel-btn carousel-btn-prev"
                 onClick={() => prevImage(room.id, room.images.length)}
@@ -162,7 +162,7 @@ const Rooms = ({ onRoomSelect }) => {
                 &#8250;
               </button>
               
-              {/* Dot indicators */}
+              
               <div className="carousel-dots">
                 {room.images.map((_, imgIndex) => (
                   <button
@@ -176,7 +176,7 @@ const Rooms = ({ onRoomSelect }) => {
             </div>
           </div>
 
-          {/* Room Description */}
+          
           <div className="room-content">
             <h2 className="room-title">{room.name}</h2>
             <p className="room-description">{room.description}</p>

@@ -38,7 +38,7 @@ const Navbar = () => {
         alt="Logo" 
       />
       
-      {/* Desktop Menu */}
+      
       <ul className="desktop-menu">
         <li><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link> </li>
         <li><Link to='rooms' smooth={true} offset={-210} duration={500}>Rooms</Link></li>
@@ -47,17 +47,17 @@ const Navbar = () => {
         <li><Link to='contact' smooth={true} offset={-100} duration={500} className={`btn ${sticky ? 'dark-btn' : ''}`}>Contact Us</Link></li>
       </ul>
 
-      {/* Mobile Menu Button */}
+      
       <div className="mobile-menu-btn" onClick={toggleMobileMenu}>
         <span className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}></span>
         <span className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}></span>
         <span className={`hamburger ${mobileMenuOpen ? 'active' : ''}`}></span>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      
       <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'active' : ''}`} onClick={closeMobileMenu}></div>
 
-      {/* Mobile Menu */}
+      
       <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
         <ul>
           <li><Link to='hero' smooth={true} offset={0} duration={500} onClick={closeMobileMenu}>Home</Link></li>

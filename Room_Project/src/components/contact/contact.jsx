@@ -70,7 +70,7 @@ const Contact = ({ selectedRoom }) => {
 
       if (result.success) {
         setSubmitMessage('Thank you! Your message has been sent successfully.');
-        // Reset form
+        
         setFormData({
           name: '',
           phone: '',
@@ -86,7 +86,7 @@ const Contact = ({ selectedRoom }) => {
     } finally {
       setIsSubmitting(false);
     }
-    // You can add your form submission logic here
+    
   };
 
   return (

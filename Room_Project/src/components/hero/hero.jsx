@@ -33,8 +33,10 @@ const Hero = () => {
         transition: 'opacity 0.1s ease',
         pointerEvents: textOpacity < 0.1 ? 'none' : 'auto' // Add this line
         }}>
-            <h1>We ensure a smooth room experience</h1>
-            <p>Book your room with us and enjoy a hassle-free stay. Our team is dedicated to providing you with the best service possible.</p>
+            <h1>Susang Co-living Spaces-Hostel</h1>
+            <p>"सुसंगती सदा घडो सुजन वाक्य कानी पडो
+            कलंक मतीचा झडो विषय सर्वथा नावडो"
+            </p>
             <Link to='rooms' smooth={true} offset={-210} duration={500} className='btn'>Book Now</Link>
         </div>
     </div>
