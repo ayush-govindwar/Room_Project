@@ -34,8 +34,8 @@ const Hero = () => {
         pointerEvents: textOpacity < 0.1 ? 'none' : 'auto' // Add this line
         }}>
             <h1>Susang Co-living Spaces-Hostel</h1>
-            <p>"सुसंगती सदा घडो सुजन वाक्य कानी पडो
-            कलंक मतीचा झडो विषय सर्वथा नावडो"
+            <p>सुसंगती सदा घडो सुजन वाक्य कानी पडो
+            कलंक मतीचा झडो विषय सर्वथा नावडो
             </p>
             <Link to='rooms' smooth={true} offset={-210} duration={500} className='btn'>Book Now</Link>
         </div>
