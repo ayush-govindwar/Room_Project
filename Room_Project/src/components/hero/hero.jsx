@@ -35,8 +35,8 @@ const Hero = () => {
         }}>
             <h1>Susang Co-living Spaces-Hostel</h1>
             <div className="quote-container">
-                <p className="quote-line-1">सुसंगती सदा घडो सुजन वाक्य कानी पडो</p>
-                <p className="quote-line-2">कलंक मतीचा झडो विषय सर्वथा नावडो</p>
+                <p className="quote-line-1">"सुसंगती सदा घडो सुजन वाक्य कानी पडो</p>
+                <p className="quote-line-2">कलंक मतीचा झडो विषय सर्वथा नावडो"</p>
             </div>
             <Link to='rooms' smooth={true} offset={-210} duration={500} className='btn'>Book Now</Link>
         </div>
