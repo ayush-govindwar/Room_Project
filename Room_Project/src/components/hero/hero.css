@@ -1,27 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:wght@400;500;700&display=swap');
 .hero {
   background: url('../../assets/hero.png') center center / cover no-repeat;
   width: 100%;
   height: 100vh;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-text{
+.hero-text {
     text-align: center;
     max-width: 800px;
     color: white;
-    
+    padding: 0 20px; /* Add padding for mobile */
 }
 
 .hero-text h1 {
-    font-size: 40px;
-    font-weight: 600;
-
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Better readability */
 }
 
-.hero-text p {
-    margin: 10px auto 30px;
+.quote-container {
+    margin: 20px 0 30px 0;
+}
+
+.quote-line-1,
+.quote-line-2 {
+    margin: 8px auto;
     max-width: 700px;
     line-height: 1.4;
+    font-weight: 600;
+    font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.quote-line-1 {
+    margin-bottom: 5px;
+}
+
+.quote-line-2 {
+    margin-top: 5px;
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero-text {
+        padding: 0 15px;
+        max-width: 90%;
+    }
+    
+    .hero-text h1 {
+        font-size: 45px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        line-height: 1.3;
+    }
+    
+    .quote-line-1,
+    .quote-line-2 {
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text {
+        padding: 0 10px;
+    }
+    
+    .hero-text h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .quote-line-1,
+    .quote-line-2 {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .quote-container {
+        margin: 15px 0 25px 0;
+    }
 }

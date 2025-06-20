@@ -90,7 +90,41 @@ const Rooms = ({ onRoomSelect }) => {
         "/images/room8-3.jpg"
       ],
       amenities: ["Eco-Friendly", "King Bed", "Private Terrace", "Sustainable Amenities"]
+    },
+    {
+      id: 9,
+      name: "Premium Eco Suite",
+      description: "Our flagship Premium Eco Suite represents the pinnacle of sustainable luxury. Every detail reflects our commitment to environmental harmony while providing uncompromising comfort and elegance.",
+      images: [
+        "/images/room8-1.jpg",
+        "/images/room8-2.jpg",
+        "/images/room8-3.jpg"
+      ],
+      amenities: ["Eco-Friendly", "King Bed", "Private Terrace", "Sustainable Amenities"]
+    },
+    {
+      id: 10,
+      name: "Premium Eco Suite",
+      description: "Our flagship Premium Eco Suite represents the pinnacle of sustainable luxury. Every detail reflects our commitment to environmental harmony while providing uncompromising comfort and elegance.",
+      images: [
+        "/images/room8-1.jpg",
+        "/images/room8-2.jpg",
+        "/images/room8-3.jpg"
+      ],
+      amenities: ["Eco-Friendly", "King Bed", "Private Terrace", "Sustainable Amenities"]
+    },
+    {
+      id: 11,
+      name: "Premium Eco Suite",
+      description: "Our flagship Premium Eco Suite represents the pinnacle of sustainable luxury. Every detail reflects our commitment to environmental harmony while providing uncompromising comfort and elegance.",
+      images: [
+        "/images/room8-1.jpg",
+        "/images/room8-2.jpg",
+        "/images/room8-3.jpg"
+      ],
+      amenities: ["Eco-Friendly", "King Bed", "Private Terrace", "Sustainable Amenities"]
     }
+    
   ];
 
   

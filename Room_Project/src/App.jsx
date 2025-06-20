@@ -5,6 +5,7 @@ import Rooms from './components/rooms/rooms'
 import Title from './components/title/title'
 import Testimonials from './components/testimonials/testimonials'
 import Contact from './components/contact/contact'
+import AboutUs from './components/aboutus/aboutus'
 
 const App = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
@@ -17,6 +18,7 @@ const App = () => {
     <div>
       <Navbar/>
       <Hero />
+      <AboutUs />
       <Title subtitle='OUR ROOMS' title='What We Offer'/>
       <Rooms onRoomSelect={handleRoomSelect} />
       <Title subtitle='TESTIMONIALS' title='What Our Customers Say '/>

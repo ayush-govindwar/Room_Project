@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './hero.css'
 import { Link } from 'react-scroll'
+
 const Hero = () => {
   const [textOpacity, setTextOpacity] = useState(1);
 
@@ -21,7 +22,6 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   return (
     <div className='hero container'>
         <div className='hero-text' style={{ 
@@ -31,12 +31,13 @@ const Hero = () => {
         transform: 'translate(-50%, -50%)',
         opacity: textOpacity,
         transition: 'opacity 0.1s ease',
-        pointerEvents: textOpacity < 0.1 ? 'none' : 'auto' // Add this line
+        pointerEvents: textOpacity < 0.1 ? 'none' : 'auto'
         }}>
             <h1>Susang Co-living Spaces-Hostel</h1>
-            <p>सुसंगती सदा घडो सुजन वाक्य कानी पडो
-            कलंक मतीचा झडो विषय सर्वथा नावडो
-            </p>
+            <div className="quote-container">
+                <p className="quote-line-1">सुसंगती सदा घडो सुजन वाक्य कानी पडो</p>
+                <p className="quote-line-2">कलंक मतीचा झडो विषय सर्वथा नावडो</p>
+            </div>
             <Link to='rooms' smooth={true} offset={-210} duration={500} className='btn'>Book Now</Link>
         </div>
     </div>
