@@ -5,8 +5,8 @@ const Rooms = ({ onRoomSelect }) => {
   const roomsData = [
     {
       id: 1,
-      name: "Deluxe Garden Suite",
-      description: "Immerse yourself in tranquil luxury with our Deluxe Garden Suite. Featuring panoramic garden views, premium amenities, and elegant furnishings that complement our natural aesthetic. Perfect for guests seeking serenity and comfort.",
+      name: "Susang G1",
+      description: "Cozy and well-ventilated room with great cross ventilation and an attached washroom for added comfort. A common kitchen is conveniently located just next door, making daily routines easier.",
       images: [
         "/images/room1-1.jpg",
         "/images/room1-2.jpg",
@@ -16,8 +16,8 @@ const Rooms = ({ onRoomSelect }) => {
     },
     {
       id: 2,
-      name: "Executive Plant Paradise",
-      description: "Experience modern comfort surrounded by lush greenery. This executive room combines contemporary design with our signature plant-filled atmosphere, creating a refreshing sanctuary for business and leisure travelers.",
+      name: "Susang G2",
+      description: "Spacious two-room setup with two coolers to keep things breezy, plus remote-controlled lights and fan for added ease. Located next to a common kitchen, it's perfect for a relaxed and convenient stay.",
       images: [
         "/images/room2-1.jpg",
         "/images/room2-2.jpg",
@@ -27,8 +27,8 @@ const Rooms = ({ onRoomSelect }) => {
     },
     {
       id: 3,
-      name: "Botanical Retreat",
-      description: "Discover ultimate relaxation in our Botanical Retreat. Thoughtfully designed with natural materials and surrounded by carefully curated plants, this room offers a perfect escape from the urban hustle.",
+      name: "Susang G3",
+      description: "This 150 sq ft room features two comfy beds and opens to a peaceful backyard, letting in plenty of sunlight. With a common kitchen nearby, it’s an ideal spot for a calm and cozy stay.",
       images: [
         "/images/room3-1.jpg",
         "/images/room3-2.jpg",
@@ -38,8 +38,8 @@ const Rooms = ({ onRoomSelect }) => {
     },
     {
       id: 4,
-      name: "Green Oasis Suite",
-      description: "Step into your personal green oasis. This spacious suite features floor-to-ceiling windows, abundant natural light, and our signature collection of air-purifying plants for the ultimate wellness experience.",
+      name: "Susang G4",
+      description: "Compact yet comfortable 120 sq ft room with two separate beds, a large cupboard, and plenty of storage space. Just steps from a common kitchen, it's perfect for those who like things neat and accessible.",
       images: [
         "/images/room4-1.jpg",
         "/images/room4-2.jpg",
@@ -49,8 +49,8 @@ const Rooms = ({ onRoomSelect }) => {
     },
     {
       id: 5,
-      name: "Serenity Garden Room",
-      description: "Find peace in our Serenity Garden Room, where minimalist design meets natural beauty. Each element is carefully chosen to create a harmonious environment that promotes rest and rejuvenation.",
+      name: "Susang F1",
+      description: "Enjoy cross ventilation, natural light, and spacious interiors in the Susang F1 room. With access to a large open terrace, it's perfect for fresh air, relaxation, and creating memories.",
       images: [
         "/images/room5-1.jpg",
         "/images/room5-2.jpg",
@@ -60,8 +60,8 @@ const Rooms = ({ onRoomSelect }) => {
     },
     {
       id: 6,
-      name: "Urban Jungle Suite",
-      description: "Embrace the urban jungle concept in this stunning suite. Featuring living walls, natural textures, and modern amenities, it's designed for guests who appreciate innovative biophilic design.",
+      name: "Susang F2",
+      description: "Relax in Susang F2 with your own private balcony, desert cooler, and scenic views. The open terrace is perfect for stargazing and unwinding after a long day.",
       images: [
         "/images/room6-1.jpg",
         "/images/room6-2.jpg",
@@ -124,8 +124,8 @@ const Rooms = ({ onRoomSelect }) => {
       ],
       amenities: ["Eco-Friendly", "King Bed", "Private Terrace", "Sustainable Amenities"]
     }
-    
   ];
+
 
   
   const [currentImageIndex, setCurrentImageIndex] = useState(

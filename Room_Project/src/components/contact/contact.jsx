@@ -15,14 +15,18 @@ const Contact = ({ selectedRoom }) => {
   const [submitMessage, setSubmitMessage] = useState('');
 
   const roomOptions = [
-    "Deluxe Garden Suite",
-    "Executive Plant Paradise",
-    "Botanical Retreat",
-    "Green Oasis Suite",
-    "Serenity Garden Room",
-    "Urban Jungle Suite",
-    "Zen Sanctuary",
-    "Premium Eco Suite"
+  "Susang G1",
+  "Susang G2",
+  "Susang G3",
+  "Susang G4",
+  "Susang F1",
+  "Susang F2",
+  "Zen Sanctuary",
+  "Premium Eco Suite",
+  "Premium Eco Suite",
+  "Premium Eco Suite",
+  "Premium Eco Suite"
+
   ];
 
   // Update room selection when selectedRoom prop changes
