@@ -13,8 +13,8 @@ nav{
 }
 
 img{
-    width: clamp(30px, 8vw, 70px); /* Responsive sizing */
-    height: clamp(30px, 8vw, auto);
+    width: clamp(35px, 9vw, 75px); /* Responsive sizing */
+    height: clamp(35px, 9vw, auto);
     border-radius: 50%;
 }
 
@@ -181,6 +181,10 @@ nav ul li a:hover {
     
     .mobile-menu-btn {
         display: flex;
+    }
+    img {
+    width: clamp(45px, 12vw, 85px); /* Bigger on mobile */
+    height: clamp(45px, 12vw, auto);
     }
 }
 
