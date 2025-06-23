@@ -14,19 +14,20 @@ const Contact = ({ selectedRoom }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
-  const roomOptions = [
-    "Susang G1",
-    "Susang G2",
-    "Susang G3",
-    "Susang G4",
-    "Susang F1",
-    "Susang F2",
-    "Zen Sanctuary",
-    "Premium Eco Suite",
-    "Premium Eco Suite",
-    "Premium Eco Suite",
-    "Premium Eco Suite"
-  ];
+const roomOptions = [
+  "Susang F1",
+  "Susang F2",
+  "Susang G1",
+  "Susang G2",
+  "Susang G3",
+  "Susang G4",
+  "Susang U1",
+  "Susang S1",
+  "Susang S2",
+  "Susang S3",
+  "Susang V1"
+];
+
 
   // Update room selection when selectedRoom prop changes
   useEffect(() => {
