@@ -21,14 +21,6 @@ const AboutUs = () => {
 
           <div className="about-features">
             <div className="feature-item">
-              <div className="feature-icon">👥</div>
-              <div className="feature-content">
-                <h3>We care about our team</h3>
-                <p>We believe in taking care of those who take care of you! That's why we pay our employees an advance salary, ensuring they're financially secure. Plus, all our staff members are covered with insurance, giving them peace of mind.</p>
-              </div>
-            </div>
-
-            <div className="feature-item">
               <div className="feature-icon">🏠</div>
               <div className="feature-content">
                 <h3>Comfort at its best</h3>
@@ -48,7 +40,15 @@ const AboutUs = () => {
               <div className="feature-icon">🎉</div>
               <div className="feature-content">
                 <h3>Celebrating together</h3>
-                <p>Life's special moments are meant to be shared! That's why we host two dinner parties every year - one during Diwali and another during our annual Milan celebration. It's a great way to bond with your fellow residents and make unforgettable memories.</p>
+                <p>Under the stars on our terrace, enjoy 2 movies or matches with fellow residents. We also celebrate every festival at Susang with wholehearted joy and enthusiasm.</p>
+              </div>
+            </div>
+
+            <div className="feature-item">
+              <div className="feature-icon">👥</div>
+              <div className="feature-content">
+                <h3>We care about our team</h3>
+                <p>We believe in taking care of those who take care of you! That's why we pay our employees an advance salary, ensuring they're financially secure. Plus, all our staff members are covered with insurance, giving them peace of mind.</p>
               </div>
             </div>
           </div>
@@ -70,11 +70,12 @@ const AboutUs = () => {
         <div className="about-conclusion">
           <p>At Susang Coliving, we're all about building a community that feels like family. Join us and experience it for yourself!</p>
           <Link to='rooms' 
-      smooth={true} 
-      offset={-210} 
-      duration={500} 
-      className={`btn1 `}>
-        Join Our Community</Link>
+            smooth={true} 
+            offset={-210} 
+            duration={500} 
+            className={`btn1 `}>
+            Join Our Community
+          </Link>
         </div>
       </div>
     </div>

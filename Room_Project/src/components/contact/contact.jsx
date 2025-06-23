@@ -15,18 +15,17 @@ const Contact = ({ selectedRoom }) => {
   const [submitMessage, setSubmitMessage] = useState('');
 
   const roomOptions = [
-  "Susang G1",
-  "Susang G2",
-  "Susang G3",
-  "Susang G4",
-  "Susang F1",
-  "Susang F2",
-  "Zen Sanctuary",
-  "Premium Eco Suite",
-  "Premium Eco Suite",
-  "Premium Eco Suite",
-  "Premium Eco Suite"
-
+    "Susang G1",
+    "Susang G2",
+    "Susang G3",
+    "Susang G4",
+    "Susang F1",
+    "Susang F2",
+    "Zen Sanctuary",
+    "Premium Eco Suite",
+    "Premium Eco Suite",
+    "Premium Eco Suite",
+    "Premium Eco Suite"
   ];
 
   // Update room selection when selectedRoom prop changes
@@ -53,7 +52,7 @@ const Contact = ({ selectedRoom }) => {
     console.log('Form submitted:', formData);
     setIsSubmitting(true);
     setSubmitMessage('');
-        try {
+    try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -90,24 +89,40 @@ const Contact = ({ selectedRoom }) => {
     } finally {
       setIsSubmitting(false);
     }
-    
   };
 
   return (
     <div className="contact">
         <div className="contact-col">
             <h3>Send us a message</h3>
-            <p>Reach our to us through contact form. Your 
+            <p>Reach out to us through contact form. Your 
             feedback is important to us, 
             and we will get back to you as soon as possible.
             </p>
             <ul>
-                <li><img src={mailIcon} alt=""/>Swayush.govindwar@gmail.com</li>
-                <li><img src={phoneIcon} alt=""/>+1 1234567890</li>
+                <li><img src={mailIcon} alt=""/>swapnil283@gmail.com</li>
+                <li><img src={phoneIcon} alt=""/>+91 9834179216</li>
                 <li><img src={locationIcon} alt=""/>Aurangabad, Sambhaji-Nagar</li>
             </ul>
+            
+            {/* Google Maps Section */}
+            <div className="map-container">
+                <h4>Find Us Here</h4>
+                <div className="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3752.080023229881!2d75.34334767522587!3d19.878842581498084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdba37af08bc9eb%3A0xc926d00d0ad7a640!2sSusang%20Co-living%20Spaces%20-%20Hostel!5e0!3m2!1sen!2sin!4v1750675578086!5m2!1sen!2sin"
+                        width="100%" 
+                        height="250" 
+                        style={{ border: 0, borderRadius: '8px' }}
+                        allowFullScreen="" 
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Hotel Location"
+                    ></iframe>
+                </div>
+            </div>
         </div>
-        <div className="contact-col">
+        <div className="contact-col1">
             <form onSubmit={handleSubmit}>
                 <label>Your Name</label>
                 <input 

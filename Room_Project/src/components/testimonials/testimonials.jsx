@@ -6,45 +6,47 @@ import prev_icon from '../../assets/back-icon.png';
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Sample testimonial data 
-  const testimonials = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      location: "California, USA",
-      review: "The room was spotless, cozy, and beautifully decorated. The staff was friendly, and check-in was smooth. I loved the peaceful atmosphere and stunning view from the window."
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      location: "Tokyo, Japan", 
-      review: "Exceptional service and attention to detail. The amenities were top-notch and the location was perfect for exploring the city. Will definitely be back!"
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      location: "Madrid, Spain",
-      review: "A truly memorable experience. The hospitality was outstanding and every detail was carefully thought out. Highly recommend to anyone visiting the area."
-    },
-    {
-      id: 4,
-      name: "James Wilson",
-      location: "London, UK",
-      review: "Perfect blend of comfort and luxury. The room was immaculate and the staff went above and beyond to make our stay special. Five stars!"
-    },
-    {
-      id: 5,
-      name: "Priya Sharma",
-      location: "Mumbai, India",
-      review: "Beautiful property with amazing views. The breakfast was delicious and the staff was incredibly helpful with local recommendations."
-    },
-    {
-      id: 6,
-      name: "David Brown",
-      location: "Sydney, Australia",
-      review: "Outstanding value for money. Clean, comfortable, and well-located. The customer service was exceptional from start to finish."
-    }
-  ];
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Suyog Gadewar",
+    highlight: "Clean, non-AC but well-maintained, peaceful stay",
+    review: "I stayed at this service apartment for a few days and was pleasantly surprised. Although the room wasn't air-conditioned, it was spotlessly clean and well-maintained. A peaceful, comfortable stay."
+  },
+  {
+    id: 2,
+    name: "Janhavi Deshmukh",
+    highlight: "Safe for solo female travelers, clean washrooms",
+    review: "Highly recommend this hostel! As a solo female traveler, I felt extremely safe and comfortable here. The professional crowd and clean, well-maintained washrooms were a big plus!"
+  },
+  {
+    id: 3,
+    name: "Amogh Inamdar",
+    highlight: "Cooler, fridge, supportive host",
+    review: "Fantastic stay! The owner went the extra mile—gave us an air cooler, fridge access, and ensured the room was cool and comfortable. Professional and peaceful environment."
+  },
+  {
+    id: 4,
+    name: "Shubhali Bacchewar",
+    highlight: "Chill vibe, respectful crowd, great for professionals",
+    review: "It’s a co-ed facility but everyone’s super respectful and professional. Chill, friendly vibe and great sense of community. Cleanliness and amenities are on point!"
+  },
+  {
+    id: 5,
+    name: "Jay More",
+    highlight: "24/7 water, ideal for students, peaceful",
+    review: "Fantastic stay at Susang Co-living! Clean, comfortable & convenient. The 24/7 water and professional atmosphere helped me focus on my studies. Highly recommend for students!"
+  },
+  {
+    id: 6,
+    name: "Rajshri Avadhut",
+    highlight: "Solo-travel friendly, clean & modern amenities",    
+    review: "Loved my short stay here! Felt safe & comfortable as a solo female traveler. Clean rooms, modern amenities & friendly community. Perfect for a brief stay—definitely recommend!"
+  }
+];
+
+
 
   const maxIndex = Math.ceil(testimonials.length / 2) - 1;
 
@@ -84,7 +86,7 @@ const Testimonials = () => {
                       </div>
                       <div className="user-details">
                         <h3>{testimonial.name}</h3>
-                        <span>{testimonial.location}</span>
+                        <span>{testimonial.highlight}</span>
                       </div>
                     </div>
                     <p>{testimonial.review}</p>

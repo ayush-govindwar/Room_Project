@@ -175,6 +175,189 @@
     color: #212121;
 
 }
+.room.booked {
+  position: relative;
+}
+
+.room.booked::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Booked overlay for carousel - blur effect */
+.room.booked .carousel-container {
+  position: relative;
+  filter: blur(3px) grayscale(40%) brightness(0.8);
+}
+
+.room.booked .carousel-container::after {
+  /* content: 'FULLY BOOKED'; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 10;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Disable carousel interactions for booked rooms */
+.room.booked .carousel-btn {
+  background: rgba(255, 255, 255, 0.3);
+  color: #999;
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.room.booked .carousel-dot {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+  filter: blur(1px);
+}
+
+.room.booked .carousel-dot.active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Booked room content styling - selectively blur but keep "ALREADY BOOKED" visible */
+.room.booked .room-content {
+  position: relative;
+  z-index: 2;
+}
+
+.room.booked .room-title {
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+.room.booked .room-description {
+  filter: blur(2px);
+  opacity: 0.4;
+}
+
+.room.booked .room-amenities {
+  filter: blur(1.5px);
+  opacity: 0.4;
+}
+
+.room.booked .room-price {
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+.room.booked .room-title {
+  filter: blur(1px);
+  opacity: 0.5;
+  color: #999;
+}
+
+.room.booked .room-description {
+  filter: blur(2px);
+  opacity: 0.4;
+  color: #aaa;
+}
+
+.room.booked .room-amenities {
+  filter: blur(1.5px);
+  opacity: 0.4;
+}
+
+.room.booked .room-amenities h3 {
+  color: #999;
+}
+
+.room.booked .room-amenities li {
+  color: #aaa;
+}
+
+.room.booked .room-amenities li::before {
+  content: '🔒';
+  opacity: 0.5;
+}
+
+/* Booked room price styling */
+.room.booked .room-price {
+  filter: blur(1px);
+  opacity: 0.5;
+}
+
+.room.booked .price-amount {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Clean disabled button for booked rooms - KEEP THIS VISIBLE */
+.room.booked .btn1 {
+  background: #ddd;
+  color: #666;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: none; /* Remove blur from button */
+  opacity: 1; /* Keep button fully visible */
+  font-weight: 600;
+}
+
+.room.booked .btn1:hover {
+  background: #ddd;
+  color: #999;
+}
+
+/* Simple corner badge (optional) */
+.room.booked .booked-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 15;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth transition for booking state changes */
+.room {
+  transition: all 0.3s ease;
+}
+
+/* Simple pulse animation */
+.room.booked .carousel-container::after {
+  animation: simplePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes simplePulse {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -209,6 +392,18 @@
   .room-amenities ul {
     grid-template-columns: 1fr;
   }
+  .room.booked .carousel-container::after {
+    font-size: 0.95rem;
+    padding: 15px 25px;
+    letter-spacing: 0.5px;
+  }
+  
+  .room.booked .booked-badge {
+    top: 20px;
+    right: 20px;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -231,5 +426,17 @@
   
   .room-description {
     font-size: 1rem;
+  }
+  .room.booked .carousel-container::after {
+    font-size: 0.85rem;
+    padding: 12px 20px;
+    letter-spacing: 0.3px;
+  }
+  
+  .room.booked .booked-badge {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
   }
 }
