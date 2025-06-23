@@ -63,7 +63,7 @@ const Navbar = () => {
           <li><Link to='hero' smooth={true} offset={0} duration={500} onClick={closeMobileMenu}>Home</Link></li>
           <li><Link to='rooms' smooth={true} offset={-210} duration={500} onClick={closeMobileMenu}>Rooms</Link></li>
           <li><Link to='testimonials' smooth={true} offset={-250} duration={500} onClick={closeMobileMenu}>Testimonials</Link></li>
-          <li><Link to='contact' smooth={true} offset={-90} duration={500} onClick={closeMobileMenu}>About Us</Link></li>
+          <li><Link to='about-us' smooth={true} offset={0} duration={500} onClick={closeMobileMenu}>About Us</Link></li>
           <li><Link to='contact' smooth={true} offset={-90} duration={500} className={`btn ${sticky ? 'dark-btn' : ''}`} onClick={closeMobileMenu}>Contact Us</Link></li>
         </ul>
       </div>
