@@ -257,6 +257,11 @@ const roomOptions = [
                     {submitMessage}
                   </div>
                 )}
+                
+                {/* Booking Disclaimer Note */}
+                <div className="booking-disclaimer">
+                  <p><strong>Note:</strong> Filling this form doesn't guarantee your booking. Manager will call you to confirm your booking.</p>
+                </div>
             </form>
         </div>
     </div>

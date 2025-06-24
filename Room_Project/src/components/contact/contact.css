@@ -224,6 +224,28 @@
     color: #ccc;
 }
 
+/* Booking Disclaimer Styling */
+.booking-disclaimer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    border-left: 4px solid #5a6b47;
+}
+
+.booking-disclaimer p {
+    margin: 0;
+    font-size: 14px;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.booking-disclaimer strong {
+    color: #5a6b47;
+    font-weight: 600;
+}
+
 .map-container {
     margin-top: 30px;
     padding-top: 20px;
@@ -292,6 +314,15 @@
         font-size: 15px;
         margin-bottom: 12px;
     }
+    
+    .booking-disclaimer {
+        padding: 12px;
+        margin-top: 18px;
+    }
+    
+    .booking-disclaimer p {
+        font-size: 13px;
+    }
 }
 
 /* Update the existing mobile styles */
@@ -357,6 +388,15 @@
     .contact form textarea {
         min-height: 120px;
     }
+    
+    .booking-disclaimer {
+        padding: 12px;
+        margin-top: 15px;
+    }
+    
+    .booking-disclaimer p {
+        font-size: 13px;
+    }
 }
 
 /* Small Mobile Styles */
@@ -398,5 +438,14 @@
     
     .contact form textarea {
         min-height: 100px;
+    }
+    
+    .booking-disclaimer {
+        padding: 10px;
+        margin-top: 12px;
+    }
+    
+    .booking-disclaimer p {
+        font-size: 12px;
     }
 }
