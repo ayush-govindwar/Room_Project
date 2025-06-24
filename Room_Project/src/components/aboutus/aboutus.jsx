@@ -22,10 +22,10 @@ const AboutUs = () => {
           <div className="about-features">
             <div className="feature-item">
               <div className="feature-icon">🏠</div>
-              <div className="feature-content">
+                <div className="feature-content">
                 <h3>Comfort at its best</h3>
-                <p>Our rooms are equipped with all the essentials, including a laundry bag, bed, and cupboard. We've got you covered!</p>
-              </div>
+                <p> Enjoy <strong>caretaker cleaning services every third day for rooms</strong>, along with <strong>daily bathroom and backyard cleaning</strong>. With <strong>24/7 running water</strong>, <strong>free drinking water</strong>, and a <strong>common kitchen equipped with a fridge for self-cooking</strong>, everything is set for a smooth stay. Our fully furnished rooms come with a <strong>bed, mattress, cupboards, cooler, and geyser</strong> to ensure a peaceful and homely environment.</p>
+                </div>
             </div>
 
             <div className="feature-item">
@@ -40,7 +40,7 @@ const AboutUs = () => {
               <div className="feature-icon">🎉</div>
               <div className="feature-content">
                 <h3>Celebrating together</h3>
-                <p>Under the stars on our terrace, enjoy 2 movies or matches with fellow residents. We also celebrate every festival at Susang with wholehearted joy and enthusiasm.</p>
+                <p>We celebrate every festival at Susang with wholehearted joy and enthusiasm.</p>
               </div>
             </div>
 

@@ -9,10 +9,12 @@ const Contact = ({ selectedRoom }) => {
     name: '',
     phone: '',
     room: selectedRoom?.name || '',
-    message: ''
+    message: '',
+    videoCall: '' // New field for video call preference
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [phoneError, setPhoneError] = useState('');
 
 const roomOptions = [
   "Susang F1",
@@ -28,6 +30,29 @@ const roomOptions = [
   "Susang V1"
 ];
 
+  // Phone number validation function
+  const validatePhoneNumber = (phone) => {
+    // Remove all non-digit characters
+    const cleanPhone = phone.replace(/\D/g, '');
+    
+    // Indian phone number patterns
+    const indianMobile = /^[6-9]\d{9}$/; // 10 digits starting with 6,7,8,9
+    const indianWithCountryCode = /^91[6-9]\d{9}$/; // 12 digits with country code
+    const internationalFormat = /^\+91[6-9]\d{9}$/; // With + prefix
+    
+    if (cleanPhone.length === 10 && indianMobile.test(cleanPhone)) {
+      return { isValid: true, message: '' };
+    } else if (cleanPhone.length === 12 && indianWithCountryCode.test(cleanPhone)) {
+      return { isValid: true, message: '' };
+    } else if (phone.match(internationalFormat)) {
+      return { isValid: true, message: '' };
+    } else {
+      return { 
+        isValid: false, 
+        message: 'Please enter a valid Indian mobile number (10 digits starting with 6-9)' 
+      };
+    }
+  };
 
   // Update room selection when selectedRoom prop changes
   useEffect(() => {
@@ -41,18 +66,47 @@ const roomOptions = [
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    
+    if (name === 'phone') {
+      // Allow only numbers, +, -, spaces, and parentheses for phone input
+      const phoneValue = value.replace(/[^\d+\-\s()]/g, '');
+      setFormData(prev => ({
+        ...prev,
+        [name]: phoneValue
+      }));
+      
+      // Validate phone number on change
+      if (phoneValue.trim() !== '') {
+        const validation = validatePhoneNumber(phoneValue);
+        setPhoneError(validation.isValid ? '' : validation.message);
+      } else {
+        setPhoneError('');
+      }
+    } else {
+      setFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
+    
+    // Validate phone number before submission
+    const phoneValidation = validatePhoneNumber(formData.phone);
+    if (!phoneValidation.isValid) {
+      setPhoneError(phoneValidation.message);
+      return;
+    }
+    
+    // Clear any previous phone errors
+    setPhoneError('');
+    
     console.log('Form submitted:', formData);
     setIsSubmitting(true);
     setSubmitMessage('');
+    
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -65,6 +119,7 @@ const roomOptions = [
           phone: formData.phone,
           room: formData.room,
           message: formData.message,
+          video_call_interest: formData.videoCall, // Added to email data
           subject: `Hotel Room Inquiry - ${formData.room}`,
           from_name: formData.name,
         })
@@ -79,8 +134,10 @@ const roomOptions = [
           name: '',
           phone: '',
           room: selectedRoom?.name || '',
-          message: ''
+          message: '',
+          videoCall: '' // Reset video call field
         });
+        setPhoneError(''); // Clear phone error on successful submission
       } else {
         setSubmitMessage('Sorry, there was an error sending your message. Please try again.');
       }
@@ -141,9 +198,14 @@ const roomOptions = [
                   name='phone' 
                   value={formData.phone}
                   onChange={handleInputChange}
-                  placeholder="Enter your phone number" 
+                  placeholder="Enter your phone number (e.g., 9834179216)" 
                   required 
                 />
+                {phoneError && (
+                  <div className="error-message" style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.15rem' }}>
+                    {phoneError}
+                  </div>
+                )}
                 
                 <label>Select Room</label>
                 <select 
@@ -160,6 +222,18 @@ const roomOptions = [
                   ))}
                 </select>
                 
+                <label>Are you interested in a live video call?</label>
+                <select 
+                  name="videoCall" 
+                  value={formData.videoCall}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="">Please select...</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </select>
+                
                 <label>Write your message here</label>
                 <textarea 
                   name="message" 
@@ -173,7 +247,7 @@ const roomOptions = [
                 <button 
                   type="submit" 
                   className='btn dark-btn'
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || phoneError !== ''}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
