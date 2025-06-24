@@ -222,7 +222,7 @@ const roomOptions = [
                   ))}
                 </select>
                 
-                <label>Are you interested in a live video call?</label>
+                <label>Are you interested in a live video call of room for quick booking?</label>
                 <select 
                   name="videoCall" 
                   value={formData.videoCall}
