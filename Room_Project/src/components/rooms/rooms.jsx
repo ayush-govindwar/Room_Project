@@ -162,6 +162,18 @@ const Rooms = ({ onRoomSelect }) => {
       ],
       details: ["Electricity included in price", "Inverter available", "No attached washroom"],
       price: "₹9,000"
+    },
+    {
+      id: 11,
+      name: "Susang V1",
+      description: "Economical accommodation option for two guests, offering basic comfort and convenience. A practical choice for budget-conscious travelers seeking clean and comfortable lodging. **2 tenants**",
+      images: [
+        "/images/room8-1.jpg",
+        "/images/room8-2.jpg",
+        "/images/room8-3.jpg"
+      ],
+      details: ["Electricity included in price", "No inverter", "No attached washroom"],
+      price: "₹7,000"
     }
     // Add more booked room objects here by copy-pasting from roomsData
   ];
