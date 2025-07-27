@@ -3,7 +3,18 @@ import './rooms.css'
 
 const Rooms = ({ onRoomSelect }) => {
   const roomsData = [
-
+    {
+      id: 1,
+      name: "Susang F1",
+      description: "Enjoy cross ventilation, natural light, and spacious interiors in the Susang F1 room. With access to a large open terrace, it's perfect for fresh air, relaxation, and creating memories. **3 tenants**",
+      images: [
+        "/images/room5-1.jpg",
+        "/images/room5-2.jpg",
+        "/images/room5-3.jpg"
+      ],
+      details: ["Electricity not included in price", "No inverter", "Attached washroom"],
+      price: "₹13,500"
+    },
     {
       id: 2,
       name: "Susang F2",
@@ -128,7 +139,7 @@ const Rooms = ({ onRoomSelect }) => {
 
   // Booked rooms data - copy paste room objects here as they get booked
   const bookedRoomsData = [
-    {
+        {
       id: 1,
       name: "Susang F1",
       description: "Enjoy cross ventilation, natural light, and spacious interiors in the Susang F1 room. With access to a large open terrace, it's perfect for fresh air, relaxation, and creating memories. **3 tenants**",
@@ -140,6 +151,7 @@ const Rooms = ({ onRoomSelect }) => {
       details: ["Electricity not included in price", "No inverter", "Attached washroom"],
       price: "₹13,500"
     },
+    
     {
       id: 5,
       name: "Susang G3",
@@ -152,7 +164,6 @@ const Rooms = ({ onRoomSelect }) => {
       details: ["Electricity included in price", "Inverter available", "No attached washroom"],
       price: "₹9,000"
     },
-
     {
       id: 6,
       name: "Susang G4",
