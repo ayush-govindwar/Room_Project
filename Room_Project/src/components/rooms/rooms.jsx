@@ -187,7 +187,19 @@ const Rooms = ({ onRoomSelect }) => {
       ],
       details: ["Electricity included in price", "No inverter", "No attached washroom"],
       price: "₹7,000"
-    }
+    },
+    {
+      id: 3,
+      name: "Susang G1",
+      description: "Cozy and well-ventilated room with great cross ventilation and an attached washroom for added comfort. A common kitchen is conveniently located just next door, making daily routines easier. **2 tenants**",
+      images: [
+        "/images/room1-1.jpg",
+        "/images/room1-2.jpg",
+        "/images/room1-3.jpg"
+      ],
+      details: ["Electricity included in price", "Inverter available", "Attached washroom"],
+      price: "₹11,000"
+    },
     // Add more booked room objects here by copy-pasting from roomsData
   ];
 
