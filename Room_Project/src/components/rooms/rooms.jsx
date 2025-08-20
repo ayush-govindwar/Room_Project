@@ -200,6 +200,54 @@ const Rooms = ({ onRoomSelect }) => {
       details: ["Electricity included in price", "Inverter available", "Attached washroom"],
       price: "₹11,000"
     },
+    {
+      id: 2,
+      name: "Susang F2",
+      description: "Relax in Susang F2 with your own private balcony, desert cooler, and scenic views. The open terrace is perfect for stargazing and unwinding after a long day. **3 tenants**",
+      images: [
+        "/images/room6-1.jpg",
+        "/images/room6-2.jpg",
+        "/images/room6-3.jpg"
+      ],
+      details: ["Electricity not included in price", "No inverter", "Attached washroom"],
+      price: "₹13,500"
+    },
+    {
+      id: 4,
+      name: "Susang G2",
+      description: "Spacious two-room setup with two coolers to keep things breezy, plus remote-controlled lights and fan for added ease. Located next to a common kitchen, it's perfect for a relaxed and convenient stay. **3 tenants**",
+      images: [
+        "/images/room2-1.jpg",
+        "/images/room2-2.jpg",
+        "/images/room2-3.jpg"
+      ],
+      details: ["Electricity included in price", "Inverter available", "No attached washroom"],
+      price: "₹13,500"
+    },
+        {
+      id: 7,
+      name: "Susang U1",
+      description: "Spacious accommodation designed for larger groups, offering comfort and convenience for up to four occupants. Perfect for families or groups seeking a comfortable stay with modern amenities. **4 tenants**",
+      images: [
+        "/images/room7-1.jpg",
+        "/images/room7-2.jpg",
+        "/images/room7-3.jpg"
+      ],
+      details: ["Electricity included in price", "No inverter", "Attached washroom"],
+      price: "₹16,000"
+    },
+    {
+      id: 8,
+      name: "Susang S1",
+      description: "Well-appointed room offering modern comfort and convenience for three occupants. Features thoughtful design elements and practical amenities for a pleasant stay. **3 tenants**",
+      images: [
+        "/images/room8-1.jpg",
+        "/images/room8-2.jpg",
+        "/images/room8-3.jpg"
+      ],
+      details: ["Electricity included in price", "No inverter", "Attached washroom"],
+      price: "₹13,500"
+    },
     // Add more booked room objects here by copy-pasting from roomsData
   ];
 
